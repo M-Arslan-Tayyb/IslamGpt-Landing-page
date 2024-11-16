@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-dark: #661e64;
+  --primary-color: #6c2475;
+  --secondary-color: #ff8d00;
+  --bg-light: #ffffff;
+  --bg-gray: #f6f6f6;
+  --text-color: #000000;
+}
+
+@layer components {
+  .root-container {
+    @apply flex flex-col min-h-screen bg-[var(--bg-light)] text-[var(--text-color)] antialiased;
+  }
+
+  /* .custom-hover-signin {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s;
+  }
+  .custom-hover-signin:hover {
+    background-color: var(--secondary-color);
+  } */
+}
