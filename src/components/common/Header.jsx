@@ -64,7 +64,7 @@ const Header = () => {
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div className="flex items-center justify-center">
                     <img src={logo} alt="Islam GPT logo" className="w-16 h-16" />
-                    <span className="text-[var(--primary-color)] text-2xl font-semibold relative right-3 top-1">Islam GPT</span>
+                    <span className="text-[var(--primary-color)] text-2xl font-semibold relative right-3 top-1">IslamGPT</span>
                 </div>
 
                 {/* Desktop Navigation */}
