@@ -3,7 +3,11 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import underline from '../../../assets/images/general/underline.png'
-import youngMan from '../../../assets/images/general/youngMan.png'
+// import youngMan from '../../../assets/images/general/youngMan.png'
+import youngMan from '../../../assets/images/general/footer img 2.png'
+// import youngMan from '../../../assets/images/general/youngMan.png'
+// import youngMan from '../../../assets/images/general/youngMan.png'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -74,7 +78,7 @@ const ContactUs = () => {
                             The most effective and successful solution has been in making Islamic knowledge accessible online by establishing platforms that share that knowledge.
                         </p>
                         <form ref={formRef} onSubmit={handleSubmit} className="max-w-md">
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-col sm:flex-row">
                                 <input
                                     type="email"
                                     placeholder="Your Email Address"
@@ -83,11 +87,12 @@ const ContactUs = () => {
                                 />
                                 <button
                                     type="submit"
-                                    className="px-6 py-3 bg-[var(--secondary-color)] text-white rounded-full font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
+                                    className="px-6 py-3 bg-[var(--secondary-color)] text-white rounded-full font-medium hover:opacity-90 transition-opacity whitespace-nowrap sm:w-full w-[50%]"
                                 >
                                     SUBSCRIBE
                                 </button>
                             </div>
+
                         </form>
                     </div>
 

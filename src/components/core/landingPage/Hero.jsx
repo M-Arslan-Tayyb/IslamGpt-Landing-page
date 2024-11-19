@@ -11,38 +11,37 @@ const Hero = () => {
 
     useEffect(() => {
         const images = imagesRef.current
-        let currentIndex = 0
+        const ctx = gsap.context(() => {
+            const slideAnimation = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
 
-        const slideAnimation = gsap.timeline({ repeat: -1, repeatDelay: 1 })
+            images.forEach((img, index) => {
+                if (index === 0) {
+                    gsap.set(img, { opacity: 1, x: '0%' })
+                } else {
+                    gsap.set(img, { opacity: 0, x: '100%' })
+                }
 
-        images.forEach((img, index) => {
-            if (index === 0) {
-                gsap.set(img, { opacity: 1, x: '0%' })
-            } else {
-                gsap.set(img, { opacity: 0, x: '100%' })
-            }
+                slideAnimation
+                    .to(img, {
+                        opacity: 1,
+                        x: '0%',
+                        duration: 0.75,
+                        ease: 'power2.inOut'
+                    }, index * 3)
+                    .to(img, {
+                        opacity: 0,
+                        x: '-100%',
+                        duration: 0.75,
+                        ease: 'power2.inOut'
+                    }, (index + 1) * 3 - 0.75)
+            })
+        }, sliderRef)
 
-            slideAnimation.to(img, {
-                opacity: 1,
-                x: '0%',
-                duration: 1,
-                ease: 'power2.inOut'
-            }, index * 4)
-                .to(img, {
-                    opacity: 0,
-                    x: '-100%',
-                    duration: 1,
-                    ease: 'power2.inOut'
-                }, (index + 1) * 4 - 1)
-        })
-
-        return () => {
-            slideAnimation.kill()
-        }
+        return () => ctx.revert()
     }, [])
 
     return (
-        <section id='hero' className="bg-[var(--bg-gray)] py-6 sm:py-12 mt-20 relative z-0 overflow-hidden">
+        <section id='hero' className="bg-[var(--bg-gray)] py-12 pt-16 sm:py-12 mt-20 relative z-0 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     {/* Content */}
@@ -68,15 +67,15 @@ const Hero = () => {
                     </div>
 
                     {/* Image Slider */}
-                    <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-                        <div ref={sliderRef} className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
+                    <div className="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+                        <div ref={sliderRef} className="relative w-full max-w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden">
                             {[sliderImage1, sliderImage2, sliderImage3].map((src, index) => (
                                 <img
                                     key={index}
                                     ref={el => imagesRef.current[index] = el}
                                     src={src}
                                     alt={`IslamGpt Interface ${index + 1}`}
-                                    className="absolute top-0 left-0 w-full h-full object-cover"
+                                    className="absolute top-0 left-0 w-full h-full object-contain"
                                 />
                             ))}
                         </div>

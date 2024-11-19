@@ -5,7 +5,9 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import underline from '../../../assets/images/general/underline.png'
-import leftImage from '../../../assets/images/general/ourCoreValues.jpg'
+// import leftImage from '../../../assets/images/general/ourCoreValues.jpg'
+import leftImage from '../../../assets/images/general/body img.png'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -81,7 +83,7 @@ const OurCoreValues = () => {
                         <img
                             src={leftImage}
                             alt="Muslims in mosque"
-                            className="w-full h-[50%] slg:h-[100%]rounded-lg shadow-lg max-w-[530px]"
+                            className="w-full h-[60%] slg:h-[100%]rounded-lg  max-w-[530px] bg-transparent"
                         />
                     </div>
 
