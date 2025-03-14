@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
     const sectionRef = useRef(null);
+    const [message, setMessage] = useState(""); // State for success message
+    const [email, setEmail] = useState(""); // State to track input
 
     useGSAP(() => {
         gsap.set(sectionRef.current, { opacity: 0, y: 50 });
@@ -28,18 +30,18 @@ const ContactUs = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission
+        if (!email) return;
+
+        setMessage("Thanks for subscribing! 🎉"); // Set success message
+        setEmail(""); // Clear input after submission
+
+        // Remove message after 3 seconds
+        setTimeout(() => setMessage(""), 3000);
     };
 
     return (
-        <section
-            ref={sectionRef}
-            className="py-12 md:py-16 flex justify-center"
-            id='contact'
-        >
-            <div
-                className="w-[90%] md:w-[80%] lg:w-[70%] bg-[#FFF7DF] rounded-3xl shadow-md p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-6"
-            >
+        <section ref={sectionRef} className="py-12 md:py-16 flex justify-center" id='contact'>
+            <div className="w-[90%] md:w-[80%] lg:w-[70%] bg-[#FFF7DF] rounded-3xl shadow-md p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-6">
                 {/* Left Content */}
                 <div className="w-full lg:w-1/2 space-y-4 md:space-y-6">
                     <h2 className="text-2xl md:text-3xl font-semibold">Salam!</h2>
@@ -51,6 +53,8 @@ const ContactUs = () => {
                         <input
                             type="email"
                             placeholder="Your Email Address"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-800"
                             required
                         />
@@ -61,6 +65,11 @@ const ContactUs = () => {
                             SUBSCRIBE
                         </button>
                     </form>
+
+                    {/* Success Message */}
+                    {message && (
+                        <p className="text-green-600 font-medium mt-2">{message}</p>
+                    )}
                 </div>
 
                 {/* Right Image */}
@@ -72,8 +81,6 @@ const ContactUs = () => {
                         style={{ position: 'relative', bottom: '-20px' }}
                     />
                 </div>
-
-
             </div>
         </section>
     );

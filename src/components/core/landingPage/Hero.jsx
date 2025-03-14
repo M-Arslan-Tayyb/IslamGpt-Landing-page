@@ -46,7 +46,7 @@ const Hero = () => {
                         </h1>
 
                         <p className="text-gray-600 text-base sm:text-lg leading-relaxed text-center lg:text-left">
-                            Chat to get authentic rulings with Quranic Ayats, <br></br>Saheeh Hadiths and fatwas.
+                            Chat to get authentic rulings with Quranic Ayats, <br></br>Saheeh Hadiths.
                         </p>
 
                         <div className="flex justify-center lg:justify-start">

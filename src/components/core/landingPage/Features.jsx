@@ -7,7 +7,7 @@ import aiChat from "../../../assets/images/StandOut/aiAssistedIcon.png";
 import practicalRelevance from "../../../assets/images/StandOut/practicleRelevance.png";
 import contextualUnderstanding from "../../../assets/images/StandOut/contextual.png";
 import nearbyMosque from "../../../assets/images/features/featureMosque.png";
-import prayerTime from "../../../assets/images/StandOut/trustedIcon.png";
+import prayerTime from "../../../assets/images/features/featurePrayerTime.png";
 import mosqueIllustration from "../../../assets/images/StandOut/full mosque.png"; // Mosque Image
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,11 +90,13 @@ const Features = () => {
                 </div>
 
                 {/* Mosque Illustration (Bigger & Fully Right) */}
+                {/* Mosque Illustration (Hidden on Small Screens) */}
                 <img
                     src={mosqueIllustration}
                     alt="Mosque Illustration"
-                    className="absolute bottom-4 right-0 w-[250px] md:w-[300px] object-contain"
+                    className="hidden md:block absolute bottom-4 right-0 w-[250px] md:w-[300px] object-contain"
                 />
+
 
             </div>
         </section>
