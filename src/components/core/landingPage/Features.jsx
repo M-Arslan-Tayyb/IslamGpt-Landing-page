@@ -6,7 +6,7 @@ import underline from "../../../assets/images/general/underline.png";
 import aiChat from "../../../assets/images/StandOut/aiAssistedIcon.png";
 import practicalRelevance from "../../../assets/images/StandOut/practicleRelevance.png";
 import contextualUnderstanding from "../../../assets/images/StandOut/contextual.png";
-import nearbyMosque from "../../../assets/images/StandOut/accuracy.png";
+import nearbyMosque from "../../../assets/images/features/featureMosque.png";
 import prayerTime from "../../../assets/images/StandOut/trustedIcon.png";
 import mosqueIllustration from "../../../assets/images/StandOut/full mosque.png"; // Mosque Image
 
@@ -64,11 +64,7 @@ const Features = () => {
                         <h2 className="text-3xl md:text-4xl font-bold text-black">
                             Features that Stands Out
                         </h2>
-                        {/* <img
-                            src={underline}
-                            alt=""
-                            className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[220px] h-4 object-contain"
-                        /> */}
+
                     </div>
                 </div>
 
