@@ -8,6 +8,7 @@ import practicleRelevance from '../../../assets/images/StandOut/practicleRelevan
 import contextual from '../../../assets/images/StandOut/contextual.png'
 import aiAssistedIcon from '../../../assets/images/StandOut/aiAssistedIcon.png'
 import trustedIcon from '../../../assets/images/StandOut/trustedIcon.png'
+import Mosque from '../../../assets/images/StandOut/Mosque.png'
 
 gsap.registerPlugin(ScrollTrigger)
 

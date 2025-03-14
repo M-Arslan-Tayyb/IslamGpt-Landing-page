@@ -1,10 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Instagram, Twitter, Facebook, Linkedin } from 'lucide-react'
-import logo from '../../assets/images/general/finalLogo.png'
+import React from "react";
+import { Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
+import logo from "../../assets/images/general/finalLogo.png";
+
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+    }
+};
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-[#010C15] text-white py-12">
@@ -21,29 +27,48 @@ const Footer = () => {
 
                     {/* Navigation */}
                     <nav className="flex gap-8">
-                        <Link to="/" className="hover:text-[var(--secondary-color)] transition-colors">
-                            Home
-                        </Link>
-                        <Link to="/features" className="hover:text-[var(--secondary-color)] transition-colors">
+                        <a
+                            href="#features"
+                            className="hover:text-[var(--secondary-color)] transition-colors"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection("features");
+                            }}
+                        >
                             Features
-                        </Link>
-                        <Link to="/faq" className="hover:text-[var(--secondary-color)] transition-colors">
+                        </a>
+                        <a
+                            href="#faq"
+                            className="hover:text-[var(--secondary-color)] transition-colors"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection("faq");
+                            }}
+                        >
                             FAQ
-                        </Link>
+                        </a>
+                        <a
+                            href="#contact"
+                            className="hover:text-[var(--secondary-color)] transition-colors"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSection("contact");
+                            }}
+                        >
+                            Contact
+                        </a>
                     </nav>
 
                     {/* Social Links */}
                     <div className="flex gap-6">
-                        <a href="#" className="hover:text-[var(--secondary-color)] transition-colors">
+                        <a href="https://www.instagram.com/arslan._butt/" className="hover:text-[var(--secondary-color)] transition-colors">
                             <Instagram className="w-5 h-5" />
                         </a>
-                        <a href="#" className="hover:text-[var(--secondary-color)] transition-colors">
-                            <Twitter className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="hover:text-[var(--secondary-color)] transition-colors">
+
+                        <a href="https://www.facebook.com/butt.arslan.923" className="hover:text-[var(--secondary-color)] transition-colors">
                             <Facebook className="w-5 h-5" />
                         </a>
-                        <a href="#" className="hover:text-[var(--secondary-color)] transition-colors">
+                        <a href="https://www.linkedin.com/in/m-arslan-tayyab-ab2099270/" className="hover:text-[var(--secondary-color)] transition-colors">
                             <Linkedin className="w-5 h-5" />
                         </a>
                     </div>
@@ -54,18 +79,18 @@ const Footer = () => {
                     <p className="text-sm text-gray-400">
                         © Copyright {currentYear}, All Rights Reserved
                     </p>
-                    <div className="flex gap-6">
-                        <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {/* <div className="flex gap-6">
+                        <a href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
                             Privacy Policy
-                        </Link>
-                        <Link to="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
+                        </a>
+                        <a href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
                             Terms
-                        </Link>
-                    </div>
+                        </a>
+                    </div> */}
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

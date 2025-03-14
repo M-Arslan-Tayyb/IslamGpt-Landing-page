@@ -2,7 +2,8 @@ import React, { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import underline from '../../../assets/images/general/underline.png'
+import plantImg from '../../../assets/images/general/plantImg.png'
+
 import { ChevronDown } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -81,15 +82,9 @@ const FAQ = () => {
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                             Frequently Asked Questions
                         </h2>
-                        <img
-                            src={underline}
-                            alt=""
-                            className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[220px] h-4 object-contain"
-                        />
+
                     </div>
-                    <p className="mt-8 text-gray-600 max-w-3xl mx-auto text-lg">
-                        Explore common questions and detailed answers about IslamGpt — your trusted companion for personalized, AI-driven Islamic learning.
-                    </p>
+
                 </div>
 
                 {/* FAQ Items */}

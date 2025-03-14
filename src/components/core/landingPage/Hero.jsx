@@ -10,60 +10,54 @@ const Hero = () => {
     const imagesRef = useRef([])
 
     useEffect(() => {
-        const images = imagesRef.current
+        const images = imagesRef.current;
         const ctx = gsap.context(() => {
-            const slideAnimation = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+            const slideAnimation = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
 
             images.forEach((img, index) => {
-                if (index === 0) {
-                    gsap.set(img, { opacity: 1, x: '0%' })
-                } else {
-                    gsap.set(img, { opacity: 0, x: '100%' })
-                }
+                gsap.set(img, { opacity: index === 0 ? 1 : 0 });
 
                 slideAnimation
                     .to(img, {
                         opacity: 1,
-                        x: '0%',
-                        duration: 0.75,
-                        ease: 'power2.inOut'
-                    }, index * 3)
+                        duration: 1,
+                        ease: "power2.inOut"
+                    }, index * 3) // Delay each animation
                     .to(img, {
                         opacity: 0,
-                        x: '-100%',
-                        duration: 0.75,
-                        ease: 'power2.inOut'
-                    }, (index + 1) * 3 - 0.75)
-            })
-        }, sliderRef)
+                        duration: 1,
+                        ease: "power2.inOut"
+                    }, (index + 1) * 3 - 1);
+            });
+        }, sliderRef);
 
-        return () => ctx.revert()
-    }, [])
+        return () => ctx.revert();
+    }, []);
+
 
     return (
-        <section id='hero' className="bg-[var(--bg-gray)] py-12 pt-16 sm:py-12 mt-20 relative z-0 overflow-hidden">
+        <section id='hero' className="bg-white py-12 pt-16 sm:py-12 mt-20 relative z-0 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     {/* Content */}
                     <div className="w-full lg:w-1/2 space-y-6 mb-8 lg:mb-0">
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left">
-                            Your Portal to{' '}
-                            <span className="relative inline-block">
-                                Authentic Islamic
-                                <img src={underline} alt="" className="absolute bottom-0 left-0 w-full h-3 object-cover" />
-                            </span>{' '}
-                            Knowledge
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center lg:text-left text-[var(--secondary-color)]">
+                            Your Companion <br /> in Deen
                         </h1>
 
                         <p className="text-gray-600 text-base sm:text-lg leading-relaxed text-center lg:text-left">
-                            IslamGpt is a dynamic, multi-functional Islamic platform that supports you in your learning and practicing of Islam, personal growth, and connection to Islamic local communities.
+                            Chat to get authentic rulings with Quranic Ayats, <br></br>Saheeh Hadiths and fatwas.
                         </p>
 
                         <div className="flex justify-center lg:justify-start">
-                            <button className="px-6 sm:px-8 py-3 bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white rounded-full text-base sm:text-lg font-medium transition-all duration-300">
+                            <a
+                                href="https://islam-gpt-lilac.vercel.app/signup"
+                                className="px-6 sm:px-8 py-3 bg-[var(--secondary-color)] hover:bg-[var(--primary-color)] text-white rounded-full text-base sm:text-lg font-medium transition-all duration-300"
+                            >
                                 Get Started
-                            </button>
+                            </a>
                         </div>
+
                     </div>
 
                     {/* Image Slider */}
