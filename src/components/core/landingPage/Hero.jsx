@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
-import underline from '../../../assets/images/general/underline.png'
+// import underline from '../../../assets/images/general/underline.png'
 import sliderImage1 from '../../../assets/images/hero/sliderImage1.png'
 import sliderImage2 from '../../../assets/images/hero/sliderImage2.png'
 import sliderImage3 from '../../../assets/images/hero/sliderImage3.png'
@@ -46,7 +46,7 @@ const Hero = () => {
                         </h1>
 
                         <p className="text-gray-600 text-base sm:text-lg leading-relaxed text-center lg:text-left">
-                            Chat to get authentic rulings with Quranic Ayats, <br></br>Saheeh Hadiths.
+                            IslamGPT is a dynamic, multi-functional <br />Islamic platform that supports you in your learning<br /> and practicing of Islam, personal growth, and <br />connection to Islamic local communities.
                         </p>
 
                         <div className="flex justify-center lg:justify-start">
