@@ -37,7 +37,7 @@ const Hero = () => {
 
     return (
         <section id='hero' className="bg-white py-12 pt-16 sm:py-12 mt-20 relative z-0 overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 sm:px-12 lg:px-20">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     {/* Content */}
                     <div className="w-full lg:w-1/2 space-y-6 mb-8 lg:mb-0">
